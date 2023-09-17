@@ -560,9 +560,9 @@ img {
 
   
 }
-#project_heading{
+#project_heading:hover{
 
-  /* color: var(--first-color); */
+  color: var(--first-color);
 }
 .work__name:hover{
 

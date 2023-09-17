@@ -564,3 +564,7 @@ img {
 
   /* color: var(--first-color); */
 }
+.work__name:hover{
+
+  color: var(--first-color);
+}

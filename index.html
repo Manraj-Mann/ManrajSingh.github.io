@@ -17,58 +17,55 @@
       type="image/x-icon"
     />
     <title>Manraj Singh Portfolio</title>
-    
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const texts = ["Software Engineer", "Web Developer", "ML Enthusiast"];
-          const dynamicText = document.getElementById("dynamic-text");
-          const placeholder = document.getElementById("placeholder");
-          let currentTextIndex = 0; // Index of the current text in the array
-          let currentCharIndex = 0; // Index of the current character to display
-          let delayBetweenChars = 100; // Delay between characters in milliseconds
-          let delayBetweenTexts = 1000; // Delay between switching texts in milliseconds
-          let animationFrameId; // Variable to store the animation frame ID
-      
-          function showNextCharacter() {
-            const nextChar = texts[currentTextIndex].charAt(currentCharIndex);
-            dynamicText.textContent += nextChar;
-            currentCharIndex++;
-      
-            if (currentCharIndex === texts[currentTextIndex].length) {
-              setTimeout(clearText, delayBetweenTexts);
-            } else {
-              animationFrameId = requestAnimationFrame(showNextCharacter);
-            }
+      document.addEventListener("DOMContentLoaded", function () {
+        const texts = ["Software Engineer", "Web Developer", "ML Enthusiast"];
+        const dynamicText = document.getElementById("dynamic-text");
+        const placeholder = document.getElementById("placeholder");
+        let currentTextIndex = 0; // Index of the current text in the array
+        let currentCharIndex = 0; // Index of the current character to display
+        let delayBetweenChars = 150; // Delay between characters in milliseconds
+        let delayBetweenTexts = 1000; // Delay between switching texts in milliseconds
+        let animationFrameId; // Variable to store the animation frame ID
+
+        function showNextCharacter() {
+          const nextChar = texts[currentTextIndex].charAt(currentCharIndex);
+          dynamicText.textContent += nextChar;
+          currentCharIndex++;
+
+          if (currentCharIndex === texts[currentTextIndex].length) {
+            setTimeout(clearText, delayBetweenTexts);
+          } else {
+            animationFrameId = requestAnimationFrame(showNextCharacter);
           }
-      
-          function clearText() {
-            currentTextIndex = (currentTextIndex + 1) % texts.length;
-            currentCharIndex = 0;
-            dynamicText.textContent = "";
-      
-            dynamicText.style.display = "none";
-            placeholder.style.display = "block";
-      
-            setTimeout(() => {
-              dynamicText.style.display = "block";
-              placeholder.style.display = "none";
-              animationFrameId = requestAnimationFrame(showNextCharacter);
-            }, delayBetweenTexts);
-          }
-      
-          function startTextAnimation() {
+        }
+
+        function clearText() {
+          currentTextIndex = (currentTextIndex + 1) % texts.length;
+          currentCharIndex = 0;
+          dynamicText.textContent = "";
+
+          dynamicText.style.display = "none";
+          placeholder.style.display = "block";
+
+          setTimeout(() => {
             dynamicText.style.display = "block";
             placeholder.style.display = "none";
             animationFrameId = requestAnimationFrame(showNextCharacter);
-          }
-      
-          // Start the animation
-          setTimeout(startTextAnimation, delayBetweenTexts);
-        });
-      </script>
-      
-      
-  
+          }, delayBetweenTexts);
+        }
+
+        function startTextAnimation() {
+          dynamicText.style.display = "block";
+          placeholder.style.display = "none";
+          animationFrameId = requestAnimationFrame(showNextCharacter);
+        }
+
+        // Start the animation
+        setTimeout(startTextAnimation, delayBetweenTexts);
+      });
+    </script>
   </head>
   <body>
     <!--===== HEADER =====-->
@@ -224,34 +221,51 @@
 
       <!--===== WORK =====-->
       <section class="work section" id="work">
-
         <h2 class="section-title">Projects</h2>
 
         <div class="work__container bd-grid">
           <div class="work__item">
-            <a href="" class="work__img">
+            <a href="https://github.com/Manraj-Mann/Loop-AI" target="_blank" class="work__img">
               <img src="assets/img/work1.jpg" alt="" />
+              <div class="work__name">
+                <strong id="project_heading"
+                  >Image Generation / Edit Website</strong
+                >
+                - HTML, CSS, JS, FLASK, API, FIREBASE
+              </div>
             </a>
-            <div class="work__name"><strong id="project_heading">Image Generation / Edit Website</strong> - HTML, CSS, JS, FLASK, API, FIREBASE</div>
           </div>
 
           <div class="work__item">
-            <a href="" class="work__img">
+            <a href="https://github.com/Manraj-Mann/DCGAN-Visualizer" target="_blank" class="work__img">
               <img src="assets/img/work2.jpg" alt="" />
+              <div class="work__name">
+                <strong id="project_heading"
+                  >Deep Convolution GAN Visualizer</strong
+                >
+                - PYTHON, GAN'S, FLASK, PYTORCH, HTML, CSS, JS
+              </div>
             </a>
-            <div class="work__name"> <strong id="project_heading">Deep Convolution GAN Visualizer</strong> - PYTHON, GAN'S, FLASK, PYTORCH, HTML, CSS, JS</div>
-        </div>
-        <div class="work__item">
-            <a href="" class="work__img">
-                <img src="assets/img/work3.jpg" alt="" />
+          </div>
+          <div class="work__item">
+            <a href="https://github.com/Manraj-Mann/Secure-Communication-using-java" target="_blank" class="work__img">
+              <img src="assets/img/work3.jpg" alt="" />
+              <div class="work__name">
+                <strong id="project_heading"
+                  >Java Secured Communication Network</strong
+                >
+                - Java , Java Socket API
+              </div>
             </a>
-            <div class="work__name"> <strong id="project_heading">Java Secured Communication Network</strong> - Java , Java Socket API</div>
-        </div>
-        <div class="work__item">
-            <a href="" class="work__img">
-                <img src="assets/img/work4.jpg" alt="" />
+          </div>
+          <div class="work__item">
+            <a href="https://www.google.com/url?q=https://tinyurl.com/4dbb5tts&sa=D&source=apps-viewer-frontend&ust=1695017405370186&usg=AOvVaw09j2RGu4Kfn3eJOFruGqxm&hl=en" target="_blank" class="work__img">
+              <img src="assets/img/work4.jpg" alt="" />
+              <div class="work__name">
+                <strong id="project_heading">ACM CCET Android App</strong> -
+                Flutter, Dart, NoSQL
+              </div>
             </a>
-            <div class="work__name"> <strong id="project_heading">ACM CCET Android App</strong> - Flutter, Dart, NoSQL</div>
           </div>
 
           <!-- Repeat the structure for other projects -->
